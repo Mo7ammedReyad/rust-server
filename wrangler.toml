@@ -1,0 +1,12 @@
+# wrangler.toml
+name = "rust‑worker‑simple"
+type = "rust"
+account_id = "<YOUR_ACCOUNT_ID>"
+workers_dev = true
+compatibility_date = "2025‑08‑03"
+[build]
+command = "cargo install -q worker‑build && worker‑build --release"
+[build.upload]
+dir = "build/worker"
+format = "modules"
+main = "./shim.mjs"
